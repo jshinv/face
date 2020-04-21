@@ -109,3 +109,15 @@ class DjangoSession(models.Model):
     class Meta:
         managed = False
         db_table = 'django_session'
+
+
+class Person(models.Model):
+    id = models.AutoField(db_column='Id', primary_key=True)  # Field name made lowercase.
+    username = models.CharField(db_column='userName', max_length=20, blank=True, null=True)  # Field name made lowercase.
+    checkday = models.DateField(db_column='checkDay', blank=True, null=True)  # Field name made lowercase.
+    intime = models.TimeField(db_column='inTime', blank=True, null=True)  # Field name made lowercase.
+    outtime = models.TimeField(db_column='outTime', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'person'
