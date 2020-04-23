@@ -114,9 +114,9 @@ class DjangoSession(models.Model):
 class Person(models.Model):
     id = models.AutoField(db_column='Id', primary_key=True)  # Field name made lowercase.
     username = models.CharField(db_column='userName', max_length=20, blank=True, null=True)  # Field name made lowercase.
-    checkday = models.DateField(db_column='checkDay', blank=True, null=True)  # Field name made lowercase.
-    intime = models.TimeField(db_column='inTime', blank=True, null=True)  # Field name made lowercase.
-    outtime = models.TimeField(db_column='outTime', blank=True, null=True)  # Field name made lowercase.
+    checkday = models.CharField(db_column='checkDay', max_length=20, blank=True, null=True)  # Field name made lowercase.
+    intime = models.CharField(db_column='inTime', max_length=20, blank=True, null=True)  # Field name made lowercase.
+    outtime = models.CharField(db_column='outTime', max_length=20, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
         managed = False
